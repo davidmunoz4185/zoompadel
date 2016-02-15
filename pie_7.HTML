@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>dc.js - Pie Chart Example</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/dc.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/custom.css"/>
+    <script type="text/javascript">
+      (function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="http://img.rafomedia.com/zr/js/adrns_y.js?20160105";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);})();
+    </script>
+</head>
+<body>
+
+<div id="pieChart"></div>
+<!--<div id="rowChart"></div>
+<div id="numChart"></div> -->
+
+<script type="text/javascript" src="./js/d3.js"></script>
+<script type="text/javascript" src="./js/crossfilter.js"></script>
+<script type="text/javascript" src="./js/dc.js"></script>
+<script type="text/javascript">
+
+var pieChart = dc.pieChart("#pieChart");
+var rowChart = dc.rowChart("#rowChart");
+var numChart = dc.numberDisplay("#numChart");
+
+d3.csv("ZOOMPADEL_WPT_TORNEOS.csv", function(error, experiments) {
+
+  var ndx           = crossfilter(experiments),
+      runDimension  = ndx.dimension(function(d) {return d['Tipo Torneo'];}),
+      speedSumGroup = runDimension.group().reduce(
+          function (p, d) {
+            if(d.Torneo in p.Torneos){
+                p.Torneos[d.Torneo] += 1
+                //console.log(d.Torneo);
+            }
+            else{
+                p.Torneos[d.Torneo] = 1;
+                p.id_count++;
+            }
+            p.count++;
+            return p;
+        },
+
+        function (p, d) {
+            p.Torneos[d.Torneo]--;
+            if(p.Torneos[d.Torneo] === 0){
+                delete p.Torneos[d.Torneo];
+                p.id_count--;
+            }
+            return p;
+        },
+
+        function () {
+                return {Torneos: {},
+                id_count: 0,
+                count: 0};
+            }
+      );
+
+  pieChart
+    .width(450) // Ancho
+    .height(200) // Alto
+    .slicesCap(100) // Número de quesos diferentes 
+    .innerRadius(5) // Radio Circulo Interior
+    .radius(100) // Pie Radius
+    .dimension(runDimension) // Dimensión
+    .group(speedSumGroup) // by default, pie charts will use group.key as the label
+    .valueAccessor(function (d) {
+        return d.value.id_count;
+    })
+    .renderLabel(false) // Mouse on Label appears
+    .legend(dc.legend().x(0).y(5).itemHeight(30).gap(20));
+
+  rowChart
+    .width(200)
+    .height(200)
+    //.renderTitleLabel(false)
+    .group(speedSumGroup)
+    .dimension(runDimension)
+    .margins({top: 0, right: 0, bottom: -1, left: 0})
+    .valueAccessor(function (d) {
+      return d.value.id_count;
+    })
+    .elasticX(true)
+    .renderLabel(false)
+    .xAxis().ticks(0);
+
+  numChart
+    .dimension(runDimension) // Dimensión
+    .group(speedSumGroup) // by default, pie charts will use group.key as the label
+    .valueAccessor(function (d) {
+        return d.value.id_count;
+    });
+
+
+  dc.renderAll();
+
+});
+
+</script>
+
+</body>
+</html>
