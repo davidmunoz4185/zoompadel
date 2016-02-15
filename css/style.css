@@ -1,0 +1,85 @@
+/*
+ *
+ * Header
+ *
+ */
+
+.header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  min-height: 56px;
+  transition: min-height 0.3s;
+}
+
+.header__inner {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.header__logo {
+  height: 72px;
+  margin-right: 1em;
+  vertical-align: top;
+  margin-top: 12px;
+}
+
+.header__title {
+  font-weight: 300;
+  font-size: 4em;
+  margin: 0.5em 0.25em;
+  display: inline-block;
+  color: #212121;
+  text-align: center;
+}
+
+
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding:0;
+  margin:0;
+  font-family: "Roboto", sans-serif;
+}
+
+.center-content {
+  padding: .5% .5%;
+}
+
+.center {
+	text-align: center;
+}
+
+.clear-fix {
+  overflow: auto;
+}
+
+.white-text {
+  font-weight: bold;
+  color: #fff;
+}
+
+.verticalLine {
+	border-left: thick solid #ff0000;
+}
+
+#header {
+	background-color: #596ca6;
+}
+
+#title-chart {
+	background-color: #668cff;
+	float: left;
+	padding: .5% .5%;
+	width: 33.33%;
+	display: inline;
+	flex-wrap: wrap;
+}

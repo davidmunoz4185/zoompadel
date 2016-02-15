@@ -1,0 +1,78 @@
+#header {
+	padding: .25% .25%;
+	background-color: #000066;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 125%;
+	color: white;
+}
+
+hr {
+	padding: .1% .1%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: black;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+#titleChart {
+	padding: .5% .5%;
+	background-color: #f0f0f5;
+	font-weight: bold;
+}
+
+#topNumbers {
+	padding: .5% .5%;
+	background-color: #ccccff;
+	font-weight: bold;
+	color: white;
+}
+
+#rowCharts {
+	background-color: #f0f0f5;
+}
+
+.dc-legend {
+	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;	
+}
+
+#rowChart, #rowChart2, #rowChart3 {
+	background-color: #f0f0f5;
+	padding: .5% .5%;
+}
+
+#rowChart svg{
+	padding: .5% .5%;
+	width: 95%;
+}
+
+#rowChart2 svg{
+	padding: .5% .5%;
+	width: 95%;
+}
+
+#rowChart3 svg{
+	padding: .5% .5%;
+	width: 95%;
+}
+
+#pieChart {
+	padding: .5% .5%;
+}
+
+#pieChart2 {
+	padding: .5% .5%;
+}
