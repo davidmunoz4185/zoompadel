@@ -4,16 +4,74 @@
 	font-weight: bold;
 }
 
+#topTitles {
+	padding: .25% .25%;
+	font-weight: bold;
+	background-color: #3971c6;
+	color: white;
+}
+
+h7 {
+	border-left: 25px;
+}
+
+.d3-tip {
+	line-height: 1;
+    font-weight: bold;
+    padding: 8px;
+    background: black;
+    color: white;
+    border-radius: 6px;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+#topNumbers {
+	padding: .25% .25%;
+	background-color: #f0f0f5;
+	font-weight: bold;
+	color: black;
+}
+
 h1 {
-	font-size: 125%;
+	font-size: 175%;
 	color: white;
 }
 
 hr {
-	padding: .1% .1%;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .text-center {
@@ -32,13 +90,6 @@ hr {
 	padding: .5% .5%;
 	background-color: #f0f0f5;
 	font-weight: bold;
-}
-
-#topNumbers {
-	padding: .5% .5%;
-	background-color: #ccccff;
-	font-weight: bold;
-	color: white;
 }
 
 #rowCharts {
