@@ -63,7 +63,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-9 text-center" id="titleChart">
+          <div class="col-sm-9 text-left">
             Nº de Torneos por tipo de Torneo y Género
           </div>
           <div class="col-sm-3">
@@ -104,7 +104,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-9 text-center" id="titleChart">
+          <div class="col-sm-9 text-left">
             Nº de Partidos por tipo de Torneo y Género
           </div>
           <div class="col-sm-3">
@@ -141,7 +141,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-9 text-center" id="titleChart">
+          <div class="col-sm-9 text-center">
             Ratio Partido / Torneo
           </div>
           <div class="col-sm-3">
@@ -185,20 +185,15 @@
     var pieChart2       = dc.pieChart("#pieChart2");
     var rowChart2       = dc.rowChart("#rowChart2");
     var rowChart3       = dc.rowChart("#rowChart3");
-    //var rowChart4       = dc.rowChart("#rowChart4");
 
     d3.csv("ZOOMPADEL_WPT_TORNEOS.csv", function(error, experiments) {
 
       var tip = d3.tip()
                   .attr('class', 'd3-tip')
                   .offset([-10, 0])
-                  .html(function(d){
-                    if(typeof d.value.id_count === "undefined"){
-                      return "<strong>" + d.key + ":</strong> <span style='color:red'>" + d.value + "</span>";
-                    }
-                    else{
-                     return "<strong>" + d.key + ":</strong> <span style='color:red'>" + d.value.id_count + "</span>"; 
-                    }
+                  .html(function(d) {
+                  //return "<strong>" + d.key + ":</strong> <span style='color:red'>" + d.value.id_count + "</span>";
+                  return "<strong>" + d.key + ":</strong> <span style='color:red'>" + d.value + "</span>";
       })
 
       var pieTip = d3.tip()
@@ -311,7 +306,7 @@
     .valueAccessor(function (d) {
       return d.value.id_count;
     })
-    .elasticX(false)
+    .elasticX(true)
     .renderLabel(false)
     .xAxis().ticks(0);
 
