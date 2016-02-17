@@ -100,7 +100,7 @@ hr {
 	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;	
 }
 
-#rowChart, #rowChart2, #rowChart3 {
+#rowChart, #rowChart2, #rowChart3, #rowChart4, #rowChart5, #rowChart6 {
 	background-color: #f0f0f5;
 	padding: .5% .5%;
 }
@@ -120,10 +120,33 @@ hr {
 	width: 95%;
 }
 
+#rowChart4 svg{
+	padding: .5% .5%;
+	width: 95%;
+	height: 10%;
+}
+
+#rowChart5 svg{
+	padding: .5% .5%;
+	width: 95%;
+	height: 10%;
+}
+
+#rowChart6 svg{
+	padding: .5% .5%;
+	width: 95%;
+	height: 10%;
+}
+
 #pieChart {
 	padding: .5% .5%;
 }
 
 #pieChart2 {
 	padding: .5% .5%;
+}
+
+#title2 {
+	background-color: #f0f0f5;
+	height: 10%;
 }
