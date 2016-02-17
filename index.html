@@ -257,6 +257,8 @@
             }
       );
 
+
+
       var groupTorneosByGen_v2 = dimGenero.group().reduce(
           function (p, d) {
             if(d.Torneo in p.Torneos){
@@ -410,7 +412,7 @@
     .height(25)
     .dimension(dimGenero)
     .group(groupTorneosByGen_v2)
-    .margins({top: 0, right: 0, bottom: -1, left: 0})
+    .margins({top: 0, right: 0, bottom: -2, left: 0})
     .valueAccessor(function (d) {
       return d.value.id_count;
     })
@@ -423,7 +425,7 @@
     .height(25)
     .dimension(dimGenero)
     .group(groupTorneosByGen_v3)
-    .margins({top: 0, right: 0, bottom: -1, left: 0})
+    .margins({top: 0, right: 0, bottom: -2, left: 0})
     .valueAccessor(function (d) {
       return d.value.id_count;
     })
@@ -436,7 +438,7 @@
     .height(25)
     .dimension(dimGenero)
     .group(groupTorneosByGen_v3)
-    .margins({top: 0, right: 0, bottom: -1, left: 0})
+    .margins({top: 0, right: 0, bottom: -2, left: 0})
     .valueAccessor(function (d) {
       return d.value.id_count;
     })
